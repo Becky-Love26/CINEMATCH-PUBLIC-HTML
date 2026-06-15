@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop-4.3.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+    <mvc:annotation-driven />
+    
+    <mvc:resources mapping="/assets/**" location="/assets/" />
+
+    <context:component-scan base-package="br.com.cinematch" />
+
+    <bean id="urlMapping"
+          class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="index.htm">indexController</prop>
+                <prop key="entrar.htm">entrarController</prop>
+                <prop key="criarConta.htm">criarContaController</prop>
+                <prop key="criarConta2.htm">criarConta2Controller</prop>
+                <prop key="criarperfil.htm">criarPerfilController</prop>
+                <prop key="escolha_ft.htm">escolhaFtController</prop>
+                <prop key="escolha_perfil.htm">escolhaPerfilController</prop>
+                <prop key="processar_cadastro.htm">processarCadastroController</prop>
+                <prop key="home.htm">homeController</prop>
+                <prop key="dashboard.htm">dashboardController</prop>
+                <prop key="dashboard_data.htm">dashboardDataController</prop>
+                <prop key="pesquisar.htm">pesquisarController</prop>
+                <prop key="historico.htm">historicoController</prop>
+                <prop key="planos.htm">planosController</prop>
+                <prop key="dados.htm">dadosController</prop>
+                <prop key="alterarPerfil.htm">alterarPerfilController</prop>
+                <prop key="marcar_assistido.htm">marcarAssistidoController</prop>
+                <prop key="Cinematch.htm">cinematchController</prop>
+                <prop key="elenco.htm">elencoController</prop>
+                <prop key="genero.htm">generoController</prop>
+                <prop key="genero-lista.htm">generoListaController</prop>
+                <prop key="adm_filmes.htm">admFilmesController</prop>
+                <prop key="adm_usuario.htm">admUsuarioController</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/static/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <bean name="indexController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="index" />
+    </bean>
+    <bean name="entrarController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="entrar" />
+    </bean>
+    <bean name="criarContaController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="criarConta" />
+    </bean>
+    <bean name="criarConta2Controller"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="criarConta2" />
+    </bean>
+    <bean name="criarPerfilController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="criarperfil" />
+    </bean>
+    <bean name="escolhaFtController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="escolha_ft" />
+    </bean>
+    <bean name="escolhaPerfilController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="escolha_perfil" />
+    </bean>
+    <bean name="processarCadastroController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="processar_cadastro" />
+    </bean>
+    <bean name="homeController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="home" />
+    </bean>
+    <bean name="dashboardController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="dashboard" />
+    </bean>
+    <bean name="dashboardDataController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="dashboard_data" />
+    </bean>
+    <bean name="pesquisarController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="pesquisar" />
+    </bean>
+    <bean name="historicoController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="historico" />
+    </bean>
+    <bean name="planosController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="planos" />
+    </bean>
+    <bean name="dadosController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="dados" />
+    </bean>
+    <bean name="alterarPerfilController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="alterarPerfil" />
+    </bean>
+    <bean name="marcarAssistidoController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="marcar_assistido" />
+    </bean>
+    <bean name="cinematchController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="Cinematch" />
+    </bean>
+    <bean name="elencoController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="elenco" />
+    </bean>
+    <bean name="generoController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="genero" />
+    </bean>
+    <bean name="generoListaController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="genero-lista" />
+    </bean>
+    <bean name="admFilmesController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="adm_filmes" />
+    </bean>
+    <bean name="admUsuarioController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="adm_usuario" />
+    </bean>
+
+</beans>

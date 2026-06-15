@@ -1,0 +1,576 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: url("../img/fundo_login.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #fff;
+  }
+  
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #080617;
+    opacity: 0.46;
+    z-index: -1;
+  }
+  
+  header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(19, 53, 118, 0.9);
+    z-index: 10;
+  }
+  
+  .logo {
+    height: 70px;
+    object-fit: contain;
+  }
+  
+  .main-content {
+    padding: 80px 3% 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .plans-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap; /* Mantém todos na mesma linha */
+    gap: 40px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .plan {
+    background-color: #0b1b49;
+    border-radius: 25px;
+    padding: 35px 22px;
+    width: 100%;
+    max-width: 380px;
+    min-height: 520px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.45);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .plan:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+  }
+  
+  .plan h2 {
+    background-color: #133576;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.25em;
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .price {
+    background-color: #ffc107;
+    color: #0b1b49;
+    font-weight: 700;
+    font-size: 1.5em;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0 20px 0;
+  }
+  
+  .description {
+    font-size: 0.9em;
+    line-height: 1.4;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+  }
+  
+  ul {
+    list-style: none;
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 1.5;
+    margin: 0 auto 25px auto;
+    width: 90%;
+  }
+  
+  ul li::before {
+    content: "• ";
+    color: #ffc107;
+    font-weight: bold;
+  }
+  
+  button {
+    background-color: #ffc107;
+    border: none;
+    padding: 12px;
+    color: #0b1b49;
+    font-weight: 700;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.3s;
+    width: 100%;
+  }
+  
+  button:hover {
+    background-color: #e6a800;
+  }
+  
+  .footer {
+    background-color: #0b1b49;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    font-family: "Poppins", sans-serif;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .footer-top {
+    margin-bottom: 15px;
+  }
+  
+  .footer-logo {
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links a {
+    color: #b5ceff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #ffc107;
+  }
+  
+  .footer-info {
+    font-size: 0.8em;
+    color: #d9e1ff;
+    line-height: 1.6;
+  }
+  
+  .footer-info a {
+    color: #b5ceff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .footer-info a:hover {
+    color: #ffc107;
+  }
+
+/* ---------- BOTÃO VOLTAR ---------- */
+.back-btn {
+  position: fixed;
+  top: 100px;
+  left: 30px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  filter: invert(83%) sepia(80%) saturate(1000%) hue-rotate(10deg) brightness(100%) contrast(100%);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #ffc107;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+}
+
+.back-btn:hover img {
+  filter: brightness(0) invert(0);
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+/* Telas médias (tablets em landscape e notebooks pequenos) */
+@media (max-width: 1200px) {
+  .plans-container {
+    gap: 30px;
+  }
+  
+  .plan {
+    max-width: 340px;
+    padding: 30px 20px;
+    min-height: 500px;
+  }
+  
+  .plan h2 {
+    font-size: 1.15em;
+  }
+  
+  .price {
+    font-size: 1.4em;
+  }
+  
+  .description {
+    font-size: 0.85em;
+  }
+  
+  ul {
+    font-size: 0.85em;
+  }
+}
+
+/* Tablets em portrait - quebra para 2 colunas */
+@media (max-width: 900px) {
+  .plans-container {
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .plan {
+    max-width: 400px;
+    min-width: 300px;
+  }
+  
+  .main-content {
+    padding: 60px 5% 100px;
+  }
+}
+
+/* Mobile - 1 coluna */
+@media (max-width: 600px) {
+  .main-content {
+    padding: 50px 4% 80px;
+  }
+  
+  .plans-container {
+    gap: 30px;
+  }
+  
+  .plan {
+    max-width: 100%;
+    min-height: auto;
+  }
+  
+  .back-btn {
+    top: 90px;
+    left: 20px;
+    width: 35px;
+    height: 35px;
+  }
+  
+  .back-btn img {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-btn {
+    top: 85px;
+    left: 15px;
+    width: 32px;
+    height: 32px;
+  }
+  
+  .back-btn img {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .plan h2 {
+    font-size: 1.1em;
+  }
+  
+  .price {
+    font-size: 1.3em;
+  }
+}
+
+/* ---------- MODAL ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal-content {
+  background-color: #0b1b49;
+  border-radius: 20px;
+  padding: 40px 35px;
+  max-width: 550px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: slideUp 0.4s ease;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #ffffff;
+  font-size: 2.5em;
+  cursor: pointer;
+  transition: all 0.3s;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.close-btn:hover {
+  color: #ffc107;
+  transform: rotate(90deg);
+}
+
+.modal-content h2 {
+  background-color: #133576;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.4em;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-price {
+  background-color: #ffc107;
+  color: #0b1b49;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.modal-price span:first-child {
+  font-size: 2em;
+}
+
+.modal-period {
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.modal-benefits {
+  list-style: none;
+  text-align: left;
+  font-size: 0.95em;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.modal-benefits li {
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.modal-benefits li::before {
+  content: "•";
+  color: #ffc107;
+  font-weight: bold;
+  font-size: 1.3em;
+  position: absolute;
+  left: 0;
+}
+
+.payment-section {
+  margin-bottom: 25px;
+}
+
+.payment-section h3 {
+  font-size: 1em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.payment-icons {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.payment-icons img {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(0);
+}
+
+.confirm-btn {
+  background-color: #ffc107;
+  border: none;
+  padding: 14px;
+  color: #0b1b49;
+  font-weight: 700;
+  font-size: 1.1em;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.3s;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+.confirm-btn:hover {
+  background-color: #e6a800;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Responsividade do Modal */
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 30px 25px;
+    max-width: 95%;
+  }
+  
+  .modal-content h2 {
+    font-size: 1.2em;
+    padding: 12px;
+  }
+  
+  .modal-price span:first-child {
+    font-size: 1.7em;
+  }
+  
+  .modal-benefits {
+    font-size: 0.9em;
+  }
+  
+  .payment-icons {
+    gap: 10px;
+  }
+  
+  .payment-icons img {
+    height: 25px;
+  }
+}
+
+/* Responsividade do footer */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-links a {
+    font-size: 1em;
+  }
+
+  .footer-info {
+    font-size: 0.85em;
+  }
+
+  .footer-logo {
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-info p {
+    margin: 6px 0;
+  }
+
+  .footer-info {
+    font-size: 0.8em;
+  }
+}

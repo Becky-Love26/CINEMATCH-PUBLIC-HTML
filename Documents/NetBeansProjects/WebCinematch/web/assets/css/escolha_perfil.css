@@ -1,0 +1,238 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    background: #181d37;
+    color: white;
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+
+
+header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(19, 53, 118, 0.75);
+    backdrop-filter: blur(10px);
+  }
+  
+  .logo_header {
+    height: 60px;
+    object-fit: contain;
+  }
+
+.container {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 88px);
+    padding: 40px;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-bottom: 80px;
+    text-align: center;
+}
+
+.perfis-grid {
+    display: flex;
+    gap: 48px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.perfil-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.perfil-item:hover {
+    transform: scale(1.1) translateY(-8px);
+}
+
+
+
+
+.perfil-avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, #475569 0%, #334155 100%);
+    position: relative;
+}
+.perfil-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;        /* a imagem cobre todo o círculo */
+    object-position: center;  /* centraliza o meio da foto */
+    display: block;
+}
+
+.perfil-item:hover .perfil-avatar {
+    border-color: #60A5FA;
+    box-shadow: 0 0 30px rgba(96, 165, 250, 0.6), 0 8px 20px rgba(0, 0, 0, 0.4);
+    background: #1e40af;
+}
+
+.perfil-nome {
+    font-size: 18px;
+    font-weight: 500;
+    color: #E5E7EB;
+    transition: all 0.3s ease;
+}
+
+.perfil-item:hover .perfil-nome {
+    color: #60A5FA;
+    text-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+}
+
+.add-avatar {
+    width: 128px;
+    height: 128px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    background: linear-gradient(135deg, #475569 0%, #334155 100%);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.add-perfil .add-avatar {
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(51, 65, 85, 0.5);
+}
+
+.add-perfil:hover .perfil-avatar {
+    border-color: #60A5FA;
+    background: #1e40af;
+}
+
+.add-perfil .perfil-nome {
+    color: #94A3B8;
+}
+
+.add-perfil:hover .perfil-nome {
+    color: #60A5FA;
+}
+
+.plus-icon {
+    width: 48px;
+    height: 48px;
+    color: #94A3B8;
+    transition: color 0.3s;
+}
+
+.add-perfil:hover .plus-icon {
+    color: #60A5FA;
+}
+
+/* ---------- FOOTER ---------- */
+  .footer {
+    background-color: #0b1b49;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 3;
+    margin-top: auto;
+  }
+  
+  .footer-top {
+    margin-bottom: 15px;
+  }
+  
+  .footer-logo {
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links a {
+    color: #b5ceff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #ffc107;
+  }
+  
+  .footer-info {
+    font-size: 0.8em;
+    color: #d9e1ff;
+    line-height: 1.6;
+  }
+  
+  .footer-info a {
+    color: #b5ceff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .footer-info a:hover {
+    color: #ffc107;
+  }
+
+ /* ----------- Responsividade -------- */
+
+@media (max-width: 768px) {
+    .perfis-grid {
+        gap: 32px;
+    }
+
+    .perfil-avatar {
+        width: 96px;
+        height: 96px;
+        font-size: 48px;
+    }
+
+    .plus-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    h1 {
+        font-size: 28px;
+        margin-bottom: 60px;
+    }
+}

@@ -1,0 +1,307 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background-image: url("../img/fundo_login.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: top center;
+    background-size: cover;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    position: relative;
+    min-height: 100vh;
+  }
+  
+  .fundo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #080617;
+    opacity: 0.46;
+    z-index: -1;
+  }
+  
+  /* ---------- HEADER ---------- */
+  header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(19, 53, 118, 0.75);
+    backdrop-filter: blur(10px);
+  }
+  
+  .logo_header {
+    height: 60px;
+    object-fit: contain;
+  }
+  
+  /* ---------- CONTEÚDO PRINCIPAL ---------- */
+  .main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px 150px;
+    flex-direction: column;
+  }
+  
+  .login-container {
+    position: relative;
+    background: #0f2c64;
+    padding: 50px 70px;
+    border-radius: 12px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 550px;
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.6s ease;
+  }
+  
+  /* ---------- BOTÃO VOLTAR ---------- */
+/* ---------- BOTÃO VOLTAR ---------- */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.back-btn img {
+  width: 20px;
+  height: 20px;
+  filter: invert(83%) sepia(80%) saturate(1000%) hue-rotate(10deg) brightness(100%) contrast(100%);
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #ffc107;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.4);
+}
+
+.back-btn:hover img {
+  filter: brightness(0) invert(0);
+}
+  
+  /* ---------- LOGO ---------- */
+  .logo {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+  }
+  
+  /* ---------- TÍTULO ---------- */
+  h3 {
+    color: white;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  
+  /* ---------- FORMULÁRIO ---------- */
+  .form-group {
+    margin-bottom: 25px;
+  }
+  
+  label {
+    display: block;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  input {
+    width: 100%;
+    padding: 18px 22px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 17px;
+    outline: none;
+    transition: background 0.3s;
+  }
+  
+  input:focus {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  /* ---------- BOTÃO CONTINUAR ---------- */
+  .continue-button {
+    width: 100%;
+    padding: 18px;
+    background: #ffc107;
+    border: none;
+    border-radius: 8px;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+  }
+  
+  .continue-button:hover {
+    background: #efb810;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(255, 193, 7, 0.4);
+  }
+  
+  .continue-button:active {
+    transform: translateY(0);
+  }
+  
+  /* ---------- FOOTER ---------- */
+  .footer {
+    background-color: #0b1b49;
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 3;
+    margin-top: auto;
+  }
+  
+  .footer-top {
+    margin-bottom: 15px;
+  }
+  
+  .footer-logo {
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-links a {
+    color: #b5ceff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: #ffc107;
+  }
+  
+  .footer-info {
+    font-size: 0.8em;
+    color: #d9e1ff;
+    line-height: 1.6;
+  }
+  
+  .footer-info a {
+    color: #b5ceff;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .footer-info a:hover {
+    color: #ffc107;
+  }
+  
+  /* ---------- ANIMAÇÃO ---------- */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ---------- RESPONSIVIDADE ---------- */
+  @media (max-width: 768px) {
+    .login-container {
+      padding: 40px 40px;
+      max-width: 400px;
+    }
+  
+    .footer {
+      padding: 30px 15px;
+    }
+  
+    .footer-links {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .footer-links a {
+      font-size: 1em;
+    }
+  
+    .footer-info {
+      font-size: 0.85em;
+    }
+  
+    .footer-logo {
+      height: 35px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-links {
+      gap: 10px;
+    }
+  
+    .footer-info p {
+      margin: 6px 0;
+    }
+  
+    .footer-info {
+      font-size: 0.8em;
+    }
+  
+    .logo img {
+      width: 50px;
+      height: 50px;
+    }
+  
+    h3 {
+      font-size: 28px;
+    }
+  }
+  
